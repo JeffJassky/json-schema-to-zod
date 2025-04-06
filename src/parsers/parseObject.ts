@@ -37,7 +37,7 @@ export function parseObject(
             ? objectSchema.required.includes(key)
             : typeof propSchema === "object" && propSchema.required === true;
 
-          const optional = !hasDefault && !required;
+          const optional = !required;
 
           return optional ? `${result}.optional()` : result;
         })
